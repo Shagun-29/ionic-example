@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewPlace()">
+        <ion-icon name="add" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-grid>
+   <ion-row>
+
+     <ion-col>
+        <button ion-button full color="primary" (click)="game()" round>Play Game</button>
+     </ion-col>
+
+     <ion-col>
+        <button ion-button full color="primary" (click)="onNewPlace()" round>Add a place</button>
+    </ion-col>
+
+    <ion-col>
+      <button ion-button full color="primary" (click)="onCallNumber()" round>call</button>
+  </ion-col>
+
+  <!-- <ion-col>
+    <button ion-button full color="primary" (click)="onNavigate()" round>Navigations</button>
+</ion-col> -->
+
+<ion-col>
+  <button ion-button full color="primary" (click)="openModal()" round>Open Modal</button>
+</ion-col>
+
+   </ion-row>
+ </ion-grid>
+
+ <!-- Timeline -->
+ 
+  <ion-row>
+    <ion-col>
+      
+        <ion-card >
+            <ion-item>
+                <ion-avatar><img src="../../assets//imgs/user.png" alt="" ></ion-avatar>
+              </ion-item>
+            <img src="../../assets/imgs/pic1.jpg" alt="Paris" class="img-size" >
+            <ion-card-content>
+              <ion-card-title>
+                  Description
+              </ion-card-title>
+              <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin 
+                  literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                   College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                    and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum
+                     comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" 
+              </p>
+            </ion-card-content>
+         
+
+         <ion-row>
+            <ion-col col-4 text-center>
+              <button ion-button icon-start clear small>
+                <ion-icon name='thumbs-up'></ion-icon>
+                <div>12 Likes</div>
+              </button>
+            </ion-col>
+        
+            <ion-col col-4 text-center>
+              <button ion-button icon-start clear small>
+                <ion-icon name='text'></ion-icon>
+                <div>4 Comments</div>
+              </button>
+            </ion-col>
+         
+            <ion-col col-4 text-center>
+              <button ion-button icon-start clear small>
+                <ion-note>11 hours ago</ion-note>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+    </ion-col>
+
+    
+  </ion-row>
+    
+<!-- Timeline ends -->
+
+
+ <!-- added in list -->
+  <ion-card *ngIf="showList">
+    <ion-card-header text-center>
+      Wish List
+    </ion-card-header>
+  </ion-card>
+    <!-- <ion-list> -->
+      <ion-list>
+      <ion-item *ngFor="let place of places" >
+      <!-- <button ion-button *ngFor="let place of places" round color="decent"> -->
+          <ion-avatar item-start> <img src="../../assets//imgs/paris.png"></ion-avatar>
+          <h2> {{place}} </h2>
+          <p>{{descriptionPlace}}</p>
+      <!-- </button> -->
+    </ion-item>
+    </ion-list>
+  </ion-content>

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the GamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>game</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Name 1</ion-label>
+        <ion-input type="text" [(ngModel)]="name1"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+          <ion-label floating>Name 2</ion-label>
+          <ion-input type="text" [(ngModel)]='name2'></ion-input>
+      </ion-item>
+  
+        <ion-item>
+          <button ion-button full color="primary" (click)="check()" round> Check </button>
+        </ion-item>
+  
+        <ion-card text-center *ngIf="show">
+          <ion-card-header>
+            {{name1 || '??'}} 
+            <ion-icon name="heart" color="danger" ></ion-icon> 
+            {{name2 || '??'}}
+          </ion-card-header>
+          <ion-card-content class="score">
+              {{score}}%
+          </ion-card-content>
+        </ion-card>
+    </ion-list>
+    
+  
+  </ion-content>
